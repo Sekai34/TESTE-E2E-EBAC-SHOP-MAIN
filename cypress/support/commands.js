@@ -31,22 +31,11 @@ Cypress.Commands.add('login', (usuario, senha) => {
     cy.get('.woocommerce-form > .button').click()
 });
 
-Cypress.Commands.add('login', (usuario, senha) => {
-    cy.get('#username').type(usuario)
-    cy.get('#password').type(senha, {log: false})
-    cy.get('.woocommerce-form > .button').click()
+Cypress.Commands.add('addproduct', () => 
+{cy.get(':nth-child(1) > .value > .variable-items-wrapper').click('left') 
+cy.get(':nth-child(2) > .value > .variable-items-wrapper').click('left')
+cy.get('.plus').click().click().click()
+cy.get('.single_add_to_cart_button').click()
+cy.get('.stock')
+
 });
-describe('adcionar produtos', () => {
-    before(() => {
-        cy.visit('http://lojaebac.ebaconline.art.br/product/autumn-pullie/')
-    });
-    Cypress.Commands.add('addProduct', (label) =>
-
-{
-    cy.get('.button-variable-item-L').click()
-    cy.get('.button-variable-item-Red').click()
-    cy.get('.quantity').clear().type(4)
-    })
-}); 
-    
-
